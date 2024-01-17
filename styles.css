@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #b3e0ff 0%, #e6f7ff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.container {
+    position: relative;
+    padding: 50px;
+    text-align: left;
+    color: #333;
+    line-height: 1.6;
+    max-height: 100vh;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 5;
+    animation: snowfall linear infinite;
+    width: 10px;
+    height: 10px;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container p,
+.container a,
+.description,
+.education-info,
+.trainer-info,
+.project-info {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.container a {
+    color: #009688;
+    text-decoration: none;
+    border-bottom: 2px solid #009688;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+.container a:hover {
+    border-bottom: 2px solid #4CAF50;
+}
+
+.description,
+.education-info,
+.trainer-info,
+.project-info {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.section-heading {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+}
+
+.project-features,
+.skills-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.project-features li,
+.skills-list li {
+    margin-bottom: 5px;
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+        max-height: none;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .snowflake {
+        width: 6px;
+        height: 6px;
+    }
+
+    .section-heading {
+        font-size: 1.2em;
+    }
+}
